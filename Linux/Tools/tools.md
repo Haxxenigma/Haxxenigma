@@ -2,9 +2,7 @@
 
 [GTFOBins](https://gtfobins.github.io/ "https://gtfobins.github.io/")
 
-[PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings "https://github.com/swisskyrepo/PayloadsAllTheThings")
-
-- [Reverse Shell Cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md "https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md")
+[Linux Kernerl CVEs](https://www.linuxkernelcves.com/cves "https://www.linuxkernelcves.com/cves")
 
 [ExploitDB](https://www.exploit-db.com/ "https://www.exploit-db.com/")
 
@@ -13,9 +11,17 @@
 - [MySQL - User-Defined Function (UDF)](https://www.exploit-db.com/exploits/1518 "https://www.exploit-db.com/exploits/1518
 MySQL 4.x/5.0 (Linux) - User-Defined Function (UDF) Dynamic Library (2)")
 
-[Linux Kernerl CVEs](https://www.linuxkernelcves.com/cves "https://www.linuxkernelcves.com/cves")
+<br>
+
+### Useful Tools
+
+[EyeWitness](https://github.com/RedSiege/EyeWitness "https://github.com/RedSiege/EyeWitness") (take screenshots of websites)
+
+[CyberChef](https://github.com/gchq/CyberChef "https://github.com/gchq/CyberChef") (encoding/encryption/compression...)
 
 <br>
+
+### Linux Privilege Escalation Scripts
 
 [LinPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS "https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS")
 
@@ -29,7 +35,13 @@ MySQL 4.x/5.0 (Linux) - User-Defined Function (UDF) Dynamic Library (2)")
 
 [Linux Exploit Suggester 2 & Dirty Cow](https://github.com/Haxxenigma/TryHackMe/tree/main/Linux-PrivEsc-Scripts/kernel-exploits "https://github.com/Haxxenigma/TryHackMe/tree/main/Linux-PrivEsc-Scripts/kernel-exploits")
 
+[PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings "https://github.com/swisskyrepo/PayloadsAllTheThings")
+
+- [Reverse Shell Cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md "https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md")
+
 <br>
+
+### Cheatsheets
 
 [Linux Privilege Escalation Cheatsheet](https://github.com/Haxxenigma/TryHackMe/blob/main/Linux-Privilege-Escalation.md "https://github.com/Haxxenigma/TryHackMe/blob/main/Linux-Privilege-Escalation.md")
 
