@@ -1,12 +1,12 @@
 # [Apache2](https://httpd.apache.org/ "https://httpd.apache.org/")
 
-### **Install Apache2:**
+### Install Apache2:
 
 ```shell
 apt install apache2
 ```
 
-### **Create folder for website:**
+### Create folder for website:
 
 ```shell
 mkdir /var/www/example.com/
@@ -15,7 +15,7 @@ chmod -R 755 /var/www/example.com/
 nano /var/www/example.com/index.html
 ```
 
-### **/etc/apache2/sites-available/example.com.conf:**
+### /etc/apache2/sites-available/example.com.conf:
 
 ```xml
 <VirtualHost *:80>
@@ -28,14 +28,14 @@ nano /var/www/example.com/index.html
 </VirtualHost>
 ```
 
-### **Enable website:**
+### Enable website:
 
 ```shell
 sudo a2ensite example.com.conf
 sudo a2dissite 000-default.conf
 ```
 
-### **Start Apache2 service:**
+### Start Apache2 service:
 
 ```shell
 systemctl start apache2
@@ -47,7 +47,7 @@ service apache2 start
 service apache2 enable
 ```
 
-### **Create rule in firewall:**
+### Create rule in firewall:
 
 ```shell
 ufw allow 'Apache'
@@ -55,7 +55,7 @@ ufw reload
 ufw show
 ```
 
-### **Config test:**
+### Config test:
 
 ```shell
 sudo apache2ctl configtest
@@ -63,7 +63,7 @@ sudo apache2ctl configtest
 
 <br>
 
-## ***Self-Signed SSL Certificate for Apache2***
+## Self-Signed SSL Certificate for Apache2
 
 ```shell
 sudo a2enmod ssl
@@ -73,7 +73,7 @@ sudo a2enmod ssl
 sudo openssl req -x509 -days 365 -nodes -newkey rsa:4096 -keyout private-key.pem -out public-cert.pem
 ```
 
-### **/etc/apache2/sites-available/example.com.conf:**
+### /etc/apache2/sites-available/example.com.conf:
 
 ```xml
 <VirtualHost *:80>

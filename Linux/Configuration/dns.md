@@ -1,18 +1,18 @@
 # [DNS](https://ru.wikipedia.org/wiki/DNS)
 
-### **Install DNS:**
+### Install DNS:
 
 ```shell
 apt install bind9 bind9utils bind9-doc
 ```
 
-### **/etc/default/bind9:**
+### /etc/default/bind9:
 
 ```
 OPTIONS="-u bind -4"
 ```
 
-### **/etc/bind/named.conf.options:**
+### /etc/bind/named.conf.options:
 
 ```
 acl "trusted" {
@@ -37,7 +37,7 @@ options {
 };
 ```
 
-### **/etc/bind/named.conf.local:**
+### /etc/bind/named.conf.local:
 
 ```
 zone "nyc3.example.com" {
@@ -54,7 +54,7 @@ zone "168.192.in-addr.arpa" {
 }
 ```
 
-### **/etc/bind/zones/db.nyc3.example.com:**
+### /etc/bind/zones/db.nyc3.example.com:
 
 ```
 $TTL    604800
@@ -83,7 +83,7 @@ nyc3.example.com.       IN      MX  10      mail1.nyc3.example.com.
 nyc3.example.com.       IN      MX  20      mail2.nyc3.example.com.
 ```
 
-### **/etc/bind/zones/db.192.168:**
+### /etc/bind/zones/db.192.168:
 
 ```
 $TTL    604800
@@ -104,7 +104,7 @@ $TTL    604800
 100.100     IN      PTR     host1.nyc3.example.com.
 ```
 
-### **Start Bind service:**
+### Start Bind service:
 
 ```shell
 systemctl start bind9
@@ -116,7 +116,7 @@ service bind9 start
 service bind9 enable
 ```
 
-### **Create rule in firewall:**
+### Create rule in firewall:
 
 ```shell
 ufw allow 53/udp
@@ -124,7 +124,7 @@ ufw reload
 ufw show
 ```
 
-### **Config test:**
+### Config test:
 
 ```shell
 sudo named-checkconf
@@ -132,16 +132,16 @@ sudo named-checkconf
 
 <br>
 
-## ***ON CLIENT SIDE***
+## ON CLIENT SIDE
 
-### **/etc/network/interfaces:**
+### /etc/network/interfaces:
 
 ```
 dns-nameservers 192.168.100.1 192.168.100.2 8.8.8.8
 dns-search nyc3.example.com
 ```
 
-### **Restart networking:**
+### Restart networking:
 
 ```shell
 systemctl restart networking

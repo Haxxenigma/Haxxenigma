@@ -1,18 +1,18 @@
 # [DHCP](https://ru.wikipedia.org/wiki/DHCP)
 
-### **Install DHCP:**
+### Install DHCP:
 
 ```shell
 apt install isc-dhcp-server
 ```
 
-### **/etc/default/isc-dhcp-server:**
+### /etc/default/isc-dhcp-server:
 
 ```
 INTERFACESv4="eth0"
 ```
 
-### **/etc/dhcp/dhcpd.conf:**
+### /etc/dhcp/dhcpd.conf:
 
 ```
 option domain-name "example.com";
@@ -42,7 +42,7 @@ subnet 192.168.10.0 netmask 255.255.255.0 {
 }
 ```
 
-### **Start DHCP service:**
+### Start DHCP service:
 
 ```shell
 systemctl start isc-dhcp-server.service
@@ -54,7 +54,7 @@ service isc-dhcp-server.service start
 service isc-dhcp-server.service enable
 ```
 
-### **Create rule in firewall:**
+### Create rule in firewall:
 
 ```shell
 ufw allow 67/udp
@@ -64,16 +64,16 @@ ufw show
 
 <br>
 
-## ***ON CLIENT SIDE***
+## ON CLIENT SIDE
 
-### **/etc/network/interfaces:**
+### /etc/network/interfaces:
 
 ```
 auto eth0
 iface eth0 inet dhcp
 ```
 
-### **Restart networking:**
+### Restart networking:
 
 ```shell
 systemctl restart networking

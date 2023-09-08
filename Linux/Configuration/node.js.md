@@ -1,13 +1,13 @@
 # [Node.js](https://nodejs.org/ru "https://nodejs.org/ru")
 
-### **Install Node.js & npm:**
+### Install Node.js & npm:
 
 ```shell
 apt install nodejs
 apt install npm
 ```
 
-### **Initialize project:**
+### Initialize project:
 
 ```shell
 mkdir mywebserver
@@ -16,7 +16,7 @@ cd mywebserver
 npm init
 ```
 
-### **Create 'public' folder:**
+### Create 'public' folder:
 
 ```
 mywebserver/
@@ -27,7 +27,7 @@ mywebserver/
 └── index.js
 ```
 
-### **Start project:**
+### Start project:
 
 ```shell
 node index.js
@@ -35,7 +35,7 @@ node index.js
 
 <br>
 
-### **index.js** *with http:*
+### index.js *with http:*
 
 ```javascript
 const http = require('http');
@@ -67,7 +67,7 @@ server.listen(port, hostname, () => {
 
 <br>
 
-### **index.js** *with express:*
+### index.js *with express:*
 
 ```javascript
 const express = require('express');
@@ -95,7 +95,7 @@ app.listen(port, hostname, () => {
 <br>
 <br>
 
-## ***Self-Signed SSL Certificate for Node.js***
+## Self-Signed SSL Certificate for Node.js
 
 ```shell
 sudo openssl req -x509 -days 365 -nodes -newkey rsa:4096 -keyout private.key -out certificate.crt
@@ -103,7 +103,7 @@ sudo openssl req -x509 -days 365 -nodes -newkey rsa:4096 -keyout private.key -ou
 
 <br>
 
-### **index.js** *with https:*
+### index.js *with https:*
 
 ```javascript
 const https = require('https');
@@ -140,7 +140,7 @@ server.listen(port, hostname, () => {
 
 <br>
 
-### **index.js** *with express:*
+### index.js *with express:*
 
 ```javascript
 const https = require('https');
@@ -172,9 +172,9 @@ server.listen(port, hostname, () => {
 <br>
 <br>
 
-## ***Redirect***
+## Redirect
 
-### **index.js:**
+### index.js:
 
 ```javascript
 const http = require('http');
