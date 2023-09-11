@@ -17,7 +17,7 @@ pip install pyTelegramBotAPI
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot(API)
+bot = telebot.TeleBot(TOKEN)
 
 
 @bot.message_handler(commands=["start", "hello"])
@@ -74,7 +74,7 @@ from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters.command import Command
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-bot = Bot(token=API)
+bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
 
