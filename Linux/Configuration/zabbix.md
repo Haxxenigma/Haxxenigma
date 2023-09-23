@@ -211,3 +211,30 @@ Update interval: 10s
 Name: MySQL; zbxDB.zbxTable row count changed
 Expression: change(/Zabbix server/mysql.row.count)>=1
 ```
+
+<br>
+<br>
+<br>
+
+### UserParameter for monitoring cpu load percentage:
+
+```
+UserParameter=cpu.load, mpstat -P 0 | awk '$3 == "0" {print 100 - $NF}'
+```
+
+### Item:
+
+```yaml
+Name: CPU Load exceeded specific value
+Type: Zabbix Agent
+Key: cpu.load
+Type of information: Numeric (float)
+Update interval: 10s
+```
+
+### Trigger:
+
+```yaml
+Name: CPU Load exceeded 10%
+Expression: last(/Zabbix server/cpu.load)>=10
+```
