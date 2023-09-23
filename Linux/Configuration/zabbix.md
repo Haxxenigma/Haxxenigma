@@ -201,7 +201,7 @@ sudo service zabbix-agent restart
 Name: MySQL Row Count
 Type: Zabbix Agent
 Key: mysql.row.count
-Type of information: Numeric
+Type of information: Numeric (unsigned)
 Update interval: 10s
 ```
 
@@ -218,7 +218,7 @@ Expression: change(/Zabbix server/mysql.row.count)>=1
 
 ### UserParameter for monitoring cpu load percentage:
 
-```
+```conf
 UserParameter=cpu.load, mpstat -P 0 | awk '$3 == "0" {print 100 - $NF}'
 ```
 
