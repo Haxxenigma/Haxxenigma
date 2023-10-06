@@ -1,29 +1,33 @@
 # Telegram Bot (for sending alerts about changes in database)
 
-```sql
-apt install mysql-server
+```shell
+apt install mysql-server mysql-client
+```
 
+```shell
 mysql -u root -p
+```
 
-create database zabbixDB;
+```sql
+create database dbname;
 
-create user zabbixUser@localhost identified by 'zabbixPass';
+create user username@localhost identified by 'password';
 
-grant all privileges on zabbixDB.* to zabbixUser@localhost;
+grant all privileges on dbname.* to username@localhost;
 
-use zabbixDB;
+use dbname;
 
-create table zabbixTable (
+create table tablename (
     id int auto_increment primary key,
     username nvarchar(50) not null,
     password nvarchar(100) not null
 );
 
-insert into zabbixTable(username, password)
+insert into tablename(username, password)
 values  ("newUser", "newPass"),
         ("anotherUser", "strongPass");
 
-delete from zabbixTable
+delete from tablename
 where username like '%';
 
 quit;
@@ -57,10 +61,10 @@ token = "6421311991:AAEb8Zp2xln3lzqaHRbA3cGNudp-eAvZdtM"
 chat = "5006697590"
 
 db_host = "localhost"
-db_user = "zabbixUser"
-db_pass = "zabbixPass"
-db_name = "zabbixDB"
-db_table = "zabbixTable"
+db_user = "username"
+db_pass = "password"
+db_name = "dbname"
+db_table = "tablename"
 
 interval = 5
 
