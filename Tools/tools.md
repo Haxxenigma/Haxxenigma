@@ -45,19 +45,19 @@ MySQL 4.x/5.0 (Linux) - User-Defined Function (UDF) Dynamic Library (2)")
 
 ### Cheatsheets
 
-[Linux Privilege Escalation Cheatsheet](https://github.com/Haxxenigma/TryHackMe/blob/main/Linux-Privilege-Escalation.md "https://github.com/Haxxenigma/TryHackMe/blob/main/Linux-Privilege-Escalation.md")
+[Linux Privilege Escalation Cheatsheet](https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/Linux-Privilege-Escalation.md "https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/Linux-Privilege-Escalation.md")
 
-[Metasploit Cheatsheet](https://github.com/Haxxenigma/TryHackMe/blob/main/Metasploit.md "https://github.com/Haxxenigma/TryHackMe/blob/main/Metasploit.md")
+[Metasploit Cheatsheet](https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/Metasploit.md "https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/Metasploit.md")
 
-[Nmap Cheatsheet](https://github.com/Haxxenigma/TryHackMe/blob/main/Nmap.md "https://github.com/Haxxenigma/TryHackMe/blob/main/Nmap.md")
+[Nmap Cheatsheet](https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/Nmap.md "https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/Nmap.md")
 
-[Nmap Live Host Discovery Cheatsheet](https://github.com/Haxxenigma/TryHackMe/blob/main/Nmap-Live-Host-Discovery.md "https://github.com/Haxxenigma/TryHackMe/blob/main/Nmap-Live-Host-Discovery.md")
+[Nmap Live Host Discovery Cheatsheet](https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/Nmap-Live-Host-Discovery.md "https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/Nmap-Live-Host-Discovery.md")
 
-[SQL Injection Cheatsheet](https://github.com/Haxxenigma/TryHackMe/blob/main/SQL-Injection.md "https://github.com/Haxxenigma/TryHackMe/blob/main/SQL-Injection.md")
+[SQL Injection Cheatsheet](https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/SQL-Injection.md "https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/SQL-Injection.md")
 
-[OWASP Top-10 Cheatsheet](https://github.com/Haxxenigma/TryHackMe/blob/main/OWASP-Top-10.md "https://github.com/Haxxenigma/TryHackMe/blob/main/OWASP-Top-10.md")
+[OWASP Top-10 Cheatsheet](https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/OWASP-Top-10.md "https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/OWASP-Top-10.md")
 
-[Google Dorking Cheatsheet](https://github.com/Haxxenigma/TryHackMe/blob/main/Google-Dorking.md "https://github.com/Haxxenigma/TryHackMe/blob/main/Google-Dorking.md")
+[Google Dorking Cheatsheet](https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/Google-Dorking.md "https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/Google-Dorking.md")
 
 # OSINT
 
@@ -1009,7 +1009,7 @@ unshadow passwd.txt shadow.txt > hash_to_crack.txt
 john --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt
 ```
 
-[Hydra](https://www.kali.org/tools/hydra/ "https://www.kali.org/tools/hydra/") | [(Cheatsheet)](https://github.com/Haxxenigma/TryHackMe/blob/main/Hydra.md "https://github.com/Haxxenigma/TryHackMe/blob/main/Hydra.md")
+[Hydra](https://www.kali.org/tools/hydra/ "https://www.kali.org/tools/hydra/") | [(Cheatsheet)](https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/Hydra.md "https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/Hydra.md")
 
 ```shell
 sudo apt install hydra
