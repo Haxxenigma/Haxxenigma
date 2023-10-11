@@ -1,4 +1,4 @@
-# [Linux Privilege Escalation](https://github.com/Haxxenigma/TryHackMe/blob/main/Linux-Privilege-Escalation.md "https://github.com/Haxxenigma/TryHackMe/blob/main/Linux-Privilege-Escalation.md")
+# [Linux Privilege Escalation](https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/Linux-Privilege-Escalation.md "https://github.com/Haxxenigma/CybSecChallenges/blob/main/TryHackMe/Linux-Privilege-Escalation.md")
 
 [GTFOBins](https://gtfobins.github.io/ "https://gtfobins.github.io/")
 
