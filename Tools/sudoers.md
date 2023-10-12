@@ -16,7 +16,7 @@ export EDITOR="nano"
 
 ## Edit sudoers file:
 
-```
+```shell
 sudo visudo
 ```
 
@@ -38,13 +38,13 @@ root ALL=(ALL:ALL) ALL {
 
 ## Add user to sudoers:
 
-```
+```shell
 sudo usermod -aG sudo username
 ```
 
 OR
 
-```
+```shell
 sudo gpasswd -a username sudo
 ```
 
@@ -52,12 +52,12 @@ OR
 
 ## /etc/sudoers:
 
-```
+```shell
 %sudo   ALL=(ALL:ALL) ALL, username
 ```
 
 ## Check configuration:
 
-```
+```shell
 sudo visudo -c
 ```
