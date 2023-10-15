@@ -1,10 +1,10 @@
-# [Chmod](https://ru.wikipedia.org/wiki/Chmod "https://ru.wikipedia.org/wiki/Chmod")
+# [Chmod](https://ru.wikipedia.org/wiki/Chmod)
 
 ```
 chmod [options] <ugoa+-=rwxXst | 000-777> <path/to/file>
 ```
 
-***TARGET***
+## TARGET
 
 | Reference | Class   | Description                                                            |
 | :-------- | :------ | :--------------------------------------------------------------------- |
@@ -14,7 +14,7 @@ chmod [options] <ugoa+-=rwxXst | 000-777> <path/to/file>
 | a         | all     | all three of the above, same as ugo                                    |
 | (empty)   | default | same as "all", except that bits in the umask will be unchanged         |
 
-***PERMISSIONS***
+## PERMISSIONS
 
 | Mode | Name            | Description                                                                                                                                                                                    |
 | :--- | :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -22,10 +22,10 @@ chmod [options] <ugoa+-=rwxXst | 000-777> <path/to/file>
 | w    | write           | write to a file or directory                                                                                                                                                                   |
 | x    | execute         | execute a file or recurse a directory tree                                                                                                                                                     |
 | X    | special execute | applies execute permissions to directories regardless of their current permissions and applies execute permissions to a file which already has at least one execute permission bit already set |
-| s    | setuid/gid      | [setuid/gid](https://en.wikipedia.org/wiki/Setuid "https://en.wikipedia.org/wiki/Setuid")                                                                                                      |
-| t    | sticky          | [sticky bit](https://en.wikipedia.org/wiki/Sticky_bit "https://en.wikipedia.org/wiki/Sticky_bit")                                                                                              |
+| s    | setuid/gid      | [setuid/gid](https://en.wikipedia.org/wiki/Setuid)                                                                                                      |
+| t    | sticky          | [sticky bit](https://en.wikipedia.org/wiki/Sticky_bit)                                                                                              |
 
-***NUMERICAl PERMISSIONS***
+## NUMERICAl PERMISSIONS
 
 | #    | rwx  | Permission              |
 | :--- | :--- | :---------------------- |
