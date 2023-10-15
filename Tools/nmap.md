@@ -4,8 +4,6 @@
 nmap [SCAN TYPE] [OPTIONS] {TARGET SPECIFICATION}
 ```
 
-<br>
-
 ## TARGET SPECIFICATION:
 
 Hostnames, IP addresses, networks, etc.
@@ -50,8 +48,6 @@ scanme.nmap.org, microsoft.com/24, 192.168.0.1; 10.0.0-255.1-254
 
 `-d`: Increase debugging level (use -dd or more for greater effect)
 
-<br>
-
 ## [Nmap Scripting Engine:](https://nmap.org/nsedoc/)
 
 `-sC`: equivalent to `--script=default`
@@ -65,8 +61,6 @@ scanme.nmap.org, microsoft.com/24, 192.168.0.1; 10.0.0-255.1-254
 `--script-updatedb`: Update the script database.
 
 `--script-help=<Lua scripts>`: Show help about scripts
-
-<br>
 
 ## [Firewall/IDS Evasion and Spoofing:](https://nmap.org/book/man-bypass-firewalls-ids.html)
 
@@ -89,95 +83,95 @@ scanme.nmap.org, microsoft.com/24, 192.168.0.1; 10.0.0-255.1-254
 
 ## Enumerating Targets:
 
-list: `10.10.10.10 example.com`
+- list: `10.10.10.10 example.com`
 
-range: `10.10.10.15-20`
+- range: `10.10.10.15-20`
 
-subnet: `10.10.10.0/24`
+- subnet: `10.10.10.0/24`
 
-file: `-iL list_of_hosts.txt`
+- file: `-iL list_of_hosts.txt`
 
-If you want to check the list of hosts that Nmap will scan, you can use `nmap -sL TARGETS` (use  `-n` to disable DNS resolution)
+- If you want to check the list of hosts that Nmap will scan, you can use `nmap -sL TARGETS` (use  `-n` to disable DNS resolution)
 
 ## Host Discovery Using ARP:
 
-Nmap:
+- Nmap:
 
-```shell
-nmap -PR -sn <TARGETS>
-```
+    ```shell
+    nmap -PR -sn <TARGETS>
+    ```
 
-ARP Scan:
+- ARP Scan:
 
-```shell
-arp-scan -l
-```
+    ```shell
+    arp-scan -l
+    ```
 
 ## Host Discovery Using ICMP: ([ICMP types](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml))
 
-ICMP Echo:
+- ICMP Echo:
 
-```shell
-nmap -PE -sn <TARGETS>
-```
+    ```shell
+    nmap -PE -sn <TARGETS>
+    ```
 
-ICMP Timestamp:
+- ICMP Timestamp:
 
-```shell
-nmap -PP -sn <TARGETS>
-```
+    ```shell
+    nmap -PP -sn <TARGETS>
+    ```
 
-ICMP Address Mask:
+- ICMP Address Mask:
 
-```shell
-nmap -PM -sn <TARGETS>
-```
+    ```shell
+    nmap -PM -sn <TARGETS>
+    ```
 
 ## Host Discovery Using TCP and UDP
 
-TCP SYN:
+- TCP SYN:
 
-```shell
-nmap -PS -sn <TARGETS>
-```
+    ```shell
+    nmap -PS -sn <TARGETS>
+    ```
 
-TCP ACK:
+- TCP ACK:
 
-```shell
-nmap -PA -sn <TARGETS>
-```
+    ```shell
+    nmap -PA -sn <TARGETS>
+    ```
 
-UDP:
+- UDP:
 
-```shell
-nmap -PU -sn <TARGETS>
-```
+    ```shell
+    nmap -PU -sn <TARGETS>
+    ```
 
-masscan:
+- masscan:
 
-```shell
-masscan <TARGETS> -p<PORTS>
-```
+    ```shell
+    masscan <TARGETS> -p<PORTS>
+    ```
 
 ## Reverse-DNS Lookup:
 
-Never do DNS resolution:
+- Never do DNS resolution:
 
-```shell
--n
-```
+    ```shell
+    -n
+    ```
+    
+- Always resolve:
 
-Always resolve:
+    ```shell
+    -R
+    ```
+    
+- Specify custom DNS servers:
 
-```shell
--R
-```
-
-Specify custom DNS servers:
-
-```shell
---dns-servers <serv1[,serv2],...>
-```
+    ```shell
+    --dns-servers <serv1[,serv2],...>
+    ```
 
 # Other
 

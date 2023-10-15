@@ -1,4 +1,4 @@
-# [Sudoers](https://help.ubuntu.com/community/Sudoers "https://help.ubuntu.com/community/Sudoers")
+# [Sudoers](https://help.ubuntu.com/community/Sudoers)
 
 ## Choose editor:
 

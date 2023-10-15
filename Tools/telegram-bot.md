@@ -1,4 +1,6 @@
-# Telegram Bot (for sending alerts about changes in database)
+# Telegram Bot
+
+> (for sending alerts about changes in database)
 
 ```shell
 apt install mysql-server mysql-client

@@ -10,7 +10,7 @@
 
 - **RELRO** = makes binary sections read-only.
 
-**Tools**
+## Tools
 
 - Pwntool framework
 
@@ -22,7 +22,7 @@
 
 - Python
 
-**Function that can lead to bof**
+## Function that can lead to bof
 
 - scanf
 
