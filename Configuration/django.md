@@ -1,20 +1,20 @@
-# [Django](https://www.djangoproject.com/ "https://www.djangoproject.com/")
+# [Django](https://www.djangoproject.com/)
 
-[==> (tutorial) <==](https://docs.djangoproject.com/en/4.2/intro/tutorial01/ "https://docs.djangoproject.com/en/4.2/intro/tutorial01/")
+[==> (tutorial) <==](https://docs.djangoproject.com/en/4.2/intro/tutorial01/)
 
-### [Install Python:](https://www.python.org/downloads/ "https://www.python.org/downloads/")
+### [Install Python:](https://www.python.org/downloads/)
 
 ```shell
 apt install python3
 ```
 
-### [Install pip:](https://pip.pypa.io/en/stable/installation/ "https://pip.pypa.io/en/stable/installation/")
+### [Install pip:](https://pip.pypa.io/en/stable/installation/)
 
 ```shell
 python -m ensurepip --upgrade
 ```
 
-### [Create a Virtual Environment:](https://docs.python.org/3/tutorial/venv.html "https://docs.python.org/3/tutorial/venv.html")
+### [Create a Virtual Environment:](https://docs.python.org/3/tutorial/venv.html)
 
 ```shell
 pip install virtualenv
@@ -36,7 +36,7 @@ virtualenv venvname
     venvname\Scripts\activate
     ```
 
-### [Install Django:](https://www.djangoproject.com/download/ "https://www.djangoproject.com/download/")
+### [Install Django:](https://www.djangoproject.com/download/)
 
 ```shell
 pip install Django
@@ -448,4 +448,4 @@ urlpatterns = [
 
 <br>
 
-Final View of the [Django Project](./djangotest/projectname/ "./djangotest/projectname/")
+Final View of the [Django Project](./djangotest/projectname/)

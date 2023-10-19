@@ -12,7 +12,7 @@
 
 - [MySQL - User-Defined Function (UDF)](https://www.exploit-db.com/exploits/1518)
 
-### Linux Privilege Escalation Scripts
+## Linux Privilege Escalation Scripts
 
 [LinPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS)
 
@@ -31,6 +31,200 @@
 - [Reverse Shell Cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
 
 [pentestmonkey — php-reverse-shell](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php)
+
+## Enumeration
+
+### General
+
+`hostname`
+
+`uname [-a]`
+
+`cat /proc/version`
+
+`cat /etc/issue`
+
+`sudo [-l]`
+
+`ls [-la]`
+
+`id [user]`
+
+`history`
+
+`ifconfig`
+
+`ip route`
+
+`cat /etc/passwd | cut -d : -f 1 | grep home`
+
+`env`: show environmental variables.
+
+### ps
+
+`ps -A`: view all processes.
+
+`ps axjf`: view process tree.
+
+`ps aux`: all with tty, including other users (a), user-oriented format (u), processes without controlling ttys (x).
+
+### netstat
+
+`netstat -a`: display all sockets (default: connected).
+
+`netstat -t` or `netstat -u`: for TCP or UDP protocols.
+
+`netstat -l`: display listening server sockets.
+
+`netstat -s`: display networking statistics.
+
+`netstat -p`: display PID/Program name for sockets.
+
+`netstat -i`: display interface table.
+
+`netstat -ano`: Most often usage.
+
+`-a`: display all sockets.
+
+`-n`: don't resolve names.
+
+`-o`: display timers.
+
+### 2>/dev/null
+
+`2>/dev/null` use this to redirect errors to “/dev/null” and have a cleaner output.
+
+### find
+
+`find /home -name flag1.txt`: find the file named "flag1.txt” in the /home directory.
+
+`find / -type d -name config`: find the directory named "config" under “/”.
+
+`find / -type f -perm 0777`: find files with the 777 permissions.
+
+`find / -perm a=x`: find executable files.
+
+`find /home -user frank`: find all files for user “frank” under “/home”.
+
+`find / -mtime 10`: find files that were modified in the last 10 days.
+
+`find / -atime 10`: find files that were accessed in the last 10 days.
+
+`find / -cmin -60`: find files changed within the last 60 minutes.
+
+`find / -amin -60`: find files accesses within the last 60 minutes.
+
+`find / -size 50M`: find files with a 50 MB size (can also be used with (+) and (-) signs to specify a file that is larger or smaller than the given size).
+
+<br>
+
+Folders and files that can be written to or executed from:
+
+`find / -writable -type d`: Find world-writeable folders.
+
+`find / -perm -222 -type d`: Find world-writeable folders.
+
+`find / -perm -o w -type d`: Find world-writeable folders.
+
+`find / -perm -o x -type d`: Find world-executable folders.
+
+`find / -perm -u=s -type f`: Find files with the SUID bit, which allows the file to run with the privilege level of the account that owns it, rather than the account which runs it.
+
+<br>
+
+Find development tools and supported languages:
+
+`find / -name perl*`
+
+`find / -name python*`
+
+`find / -name gcc*`
+
+### locate
+
+`locate [OPTION] PATTERN`: searches for files.
+
+### grep
+
+`grep [OPTION] PATTERN [FILE]`: search for PATTERNS in each FILE.
+
+### awk
+
+`awk <options> '<condition> {<action>} ... [<condition> {<action>}]'`
+
+- *Options*:
+
+    `-F`, `--field-separator=fs`: field separator
+
+    `-f`, `-–file`: read data not from standard output, but from a file
+
+- *Actions*:
+
+    `print(string)`: output to standard output stream
+
+    `printf(string)`: formatted output to standard output stream
+
+    `system(command)`: executes a command in the system
+
+    `length(string)`: returns the length of the string
+
+    `substr(string, start, quantity)`: truncates the string and returns the result
+
+    `tolower(string)`: converts the string to lowercase
+
+    `toupper(string)`: convert the string to uppercase
+
+- *Operators*:
+
+    `$`: link to the column by number
+
+    `FNR`: number of the processed line in the file
+
+    `FS`: field separator
+
+    `NF`: the number of columns in this row
+
+    `NR`: the total number of lines in the processed text
+
+    `RS`: line separator, by default a newline character
+
+- *Example*:
+
+    - Get first column:
+
+        `cat test.txt | awk '{print $1}'`
+
+    - Get last column:
+
+        `cat test.txt | awk '{print $NF}'`
+
+    - Get penultimate column:
+
+        `cat test.txt | awk '{print $(NF-1)}'`
+
+    - Get middle column:
+
+        `cat test.txt | awk '{print $((NF/2)+1)}'`
+
+### cut
+
+`cut OPTION [FILE]`: print selected parts of lines from each FILE to standard output.
+
+`-b`: select only these bytes.
+
+`-c`: select only these characters.
+
+`-f`: select only these fields. Also print any line
+that contains no delimiter character, unless
+the -s option is specified.
+
+`-d`: use DELIM instead of TAB for field delimiter.
+
+### sort
+
+`sort [OPTION] [FILE]`: sorted concatenation of all FILE(s) to standard output.
+
+# Scenarios
 
 ## Scenario 1 (Bash Reverse Shell)
 
@@ -146,7 +340,7 @@
 
 - Execute `scrypt.so`
 
-# Crontab
+## Crontab
 
 [Crontab Generator](https://crontab-generator.org/)
 
@@ -156,7 +350,7 @@
 crontab -e
 ```
 
-# Other cheatsheets
+## Other cheatsheets
 
 <https://github.com/Rajchowdhury420/CTF-CheatSheet>
 

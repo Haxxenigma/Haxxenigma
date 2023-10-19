@@ -1,4 +1,4 @@
-# [Zabbix](https://www.zabbix.com/download "https://www.zabbix.com/download")
+# [Zabbix](https://www.zabbix.com/download)
 
 ### Install Zabbix repository:
 

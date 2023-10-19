@@ -1,4 +1,4 @@
-# [BotFather](https://t.me/BotFather "https://t.me/BotFather")
+# [BotFather](https://t.me/BotFather)
 
 ```
 /start
@@ -7,7 +7,7 @@
 /token
 ```
 
-## [pyTelegramBotAPI](https://pypi.org/project/pyTelegramBotAPI/ "https://pypi.org/project/pyTelegramBotAPI/")
+## [pyTelegramBotAPI](https://pypi.org/project/pyTelegramBotAPI/)
 
 ```shell
 pip install pyTelegramBotAPI
@@ -62,7 +62,7 @@ def unrecognizedMessageHandler(message):
 bot.infinity_polling()
 ```
 
-## [aiogram](https://aiogram.dev/ "https://aiogram.dev/")
+## [aiogram](https://aiogram.dev/)
 
 ```shell
 pip install aiogram

@@ -1,4 +1,4 @@
-# [Node.js](https://nodejs.org/ru "https://nodejs.org/ru")
+# [Node.js](https://nodejs.org/ru)
 
 ### Install Node.js & npm:
 
