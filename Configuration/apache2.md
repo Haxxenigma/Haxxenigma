@@ -249,22 +249,42 @@ systemctl restart mysql
 npm install mysql2
 ```
 
+### .env:
+
+```shell
+HOST=<server-ip-addr>
+USER=<user>
+PASS=<password>
+DB=<db>
+```
+
 ### app/db.js:
 
 ```js
 const mysql = require('mysql2/promise');
 
-module.exports = async function connectToDatabase() {
-    const connection = await mysql.createConnection({
-        host: 'mysql-server-addr',
-        user: 'user',
-        password: 'password',
-        database: 'db'
+const connectToDatabase = async () => {
+    const db = await mysql.createConnection({
+        host: process.env.HOST,
+        user: process.env.USER,
+        password: process.env.PASS,
+        database: process.env.DB,
     });
 
-    await connection.connect();
+    await db.connect();
+    return db;
+}
 
-    return connection;
+module.exports = async function execQuery(query, values) {
+    const db = await connectToDatabase();
+    try {
+        const res = await db.query(query, values);
+        return res;
+    } catch (err) {
+        return { err };
+    } finally {
+        db.end();
+    }
 }
 ```
 
@@ -272,23 +292,23 @@ module.exports = async function connectToDatabase() {
 
 ```js
 import Link from 'next/link';
-const connect = require('db.js');
+const execQuery = require('db.js');
+
+export const metadata = {
+    title: 'Main',
+    description: 'Main page',
+}
 
 export default async function Home() {
-    const db = await connect();
-    try {
-        const users = await db.query('SELECT * FROM users');
-        return (
-            <div className='root'>
-                {users[0].map(user => (
+    const [users, _] = await execQuery('SELECT * FROM users');
+    return (
+        <>
+            {
+                users.map(user => (
                     <Link href={user.name} key={user.id}>{user.name}</Link>
-                ))}
-            </div>
-        );
-    } catch (err) {
-        return console.error(`\nError occured: ${err}\n`);
-    } finally {
-        db.end();
-    }
+                ))
+            }
+        </>
+    );
 }
 ```
