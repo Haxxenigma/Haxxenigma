@@ -2,21 +2,21 @@
 
 > memory dump like `.raw` or image file like `.e01`
 
-[Volatility — memory extraction utility framework for memory forensic](https://github.com/volatilityfoundation/volatility/wiki/Command-Reference)
+[Volatility](https://github.com/volatilityfoundation/volatility/wiki/Command-Reference) — memory extraction utility framework for memory forensic
 
-[Redline — alternative to volatility](https://fareedfauzi.gitbook.io/windows-forensics-playbook/memory-forensics-analysis/redline-automate-memory-collector-and-analyzer)
+[Redline](https://fareedfauzi.gitbook.io/windows-forensics-playbook/memory-forensics-analysis/redline-automate-memory-collector-and-analyzer) — alternative to volatility
 
-[Bulk-extractor — can extracts features such as email addresses, credit card numbers, URLs, and other types of information from digital evidence files](https://www.kali.org/tools/bulk-extractor/)
+[Bulk-extractor](https://www.kali.org/tools/bulk-extractor/) — can extracts features such as email addresses, credit card numbers, URLs, and other types of information from digital evidence files
 
-[FTK Imager — data preview and imaging tool that allows you to examine files and folders on local hard drives, network drives, CDs/DVDs, and review the content of forensic images or memory dumps](https://yandex.kz/search/?text=FTK+Imager)
+[FTK Imager](https://yandex.kz/search/?text=FTK+Imager) — data preview and imaging tool that allows you to examine files and folders on local hard drives, network drives, CDs/DVDs, and review the content of forensic images or memory dumps
 
 [Autopsy](https://www.autopsy.com/), [ProDiscover](https://prodiscover.com/), [EnCase](https://www.opentext.com/products/encase-forensic) — as FTK Imager
 
-[e2fsck — fix corrupt filesystem (ext2-4)](https://manpages.ubuntu.com/manpages/impish/man8/e2fsck.8.html)
+[e2fsck](https://manpages.ubuntu.com/manpages/impish/man8/e2fsck.8.html) — fix corrupt filesystem (ext2-4)
 
-[Recuva — recover files](https://www.ccleaner.com/ru-ru/recuva)
+[Recuva](https://www.ccleaner.com/ru-ru/recuva) — recover files
 
-[RegRipper — for registry analysis](https://www.kali.org/tools/regripper/)
+[RegRipper](https://www.kali.org/tools/regripper/) — for registry analysis
 
 ## Tools for scanning event log
 

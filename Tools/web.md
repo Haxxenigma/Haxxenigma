@@ -1,9 +1,15 @@
 # WEB
 
-## Use curl
+## Use [curl](https://www.kali.org/tools/curl/)
 
 ```shell
-curl <ip address/dns>
+curl [options] <url>
+```
+
+## Use [wget](https://www.kali.org/tools/wget/)
+
+```shell
+wget [options] <url>
 ```
 
 ## Scan for directories

