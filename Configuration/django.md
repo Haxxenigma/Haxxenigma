@@ -445,7 +445,3 @@ urlpatterns = [
     path("<int:pk>/", views.DetailView.as_view(), name="detail"),
 ]
 ```
-
-<br>
-
-Final View of the [Django Project](./djangotest/projectname/)
