@@ -50,9 +50,9 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 8080
 
-CMD ["node", "app.js"]
+CMD ["node", "index.js"]
 ```
 
 ### Apache2
@@ -71,6 +71,15 @@ COPY . /var/www/html
 EXPOSE 80
 
 CMD ["apache2ctl", "-D", "FOREGROUND"]
+```
+
+## .dockerignore
+
+```
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
 ```
 
 ## Images
@@ -114,19 +123,19 @@ docker image prune
 ### Run container
 
 ```shell
-docker run -dp 80:80 my-img
+docker run -dp 80:8080 my-img
 ```
 
 ```shell
-docker run -dp 80:80 --name my-cnt my-img
+docker run -dp 80:8080 --name my-cnt my-img
 ```
 
 ```shell
-docker run -dp 80:80 --name my-cnt --rm my-img
+docker run -dp 80:8080 --name my-cnt --rm my-img
 ```
 
 ```shell
-docker run -dp 80:80 --name my-cnt --rm my-img:1.0
+docker run -dp 80:8080 --name my-cnt --rm my-img:1.0
 ```
 
 ### List containers
@@ -137,6 +146,12 @@ docker ps -a
 
 ```shell
 docker container ls
+```
+
+### Show logs of containers
+
+```shell
+docker logs <container-id | name>
 ```
 
 ### Stop containers
