@@ -32,6 +32,8 @@
 
 [Crackstation](https://crackstation.net/)
 
+[hash-identifier](https://www.kali.org/tools/hash-identifier/)
+
 <br>
 
 [fcrackzip](https://www.kali.org/tools/fcrackzip/) — crack password protected zip files
@@ -120,11 +122,29 @@ sudo apt install john
 ```
 
 ```shell
+john <hash>
+```
+
+`--wordlist=<wordlist>`: read words from wordlist
+
+`--format=<format>`: force hash of type format
+
+`--list=formats`: see the supported formats
+
+`--rules`: enable word mangling rules
+
+`--show`: show cracked passwords
+
+### [unshadow](https://www.kali.org/tools/john/#unshadow)
+
+> combines passwd and shadow files
+
+```shell
 cp /etc/passwd passwd.txt && cp /etc/shadow shadow.txt
 
 unshadow passwd.txt shadow.txt > hash_to_crack.txt
 
-john --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt
+john --wordlist=<wordlist> hash_to_crack.txt
 ```
 
 ### [ssh2john](https://www.kali.org/tools/john/#ssh2john)
@@ -140,7 +160,7 @@ python ssh2john.py id_rsa > id_rsa.hash
 ```
 
 ```shell
-john --wordlist=/usr/share/wordlists/rockyou.txt id_rsa.hash
+john --wordlist=<wordlist> id_rsa.hash
 ```
 
 ```shell
@@ -164,7 +184,7 @@ zip2john file.zip > hash.txt
 ```
 
 ```shell
-john --format=zip --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+john --format=zip --wordlist=<wordlist> hash.txt
 ```
 
 ```shell
