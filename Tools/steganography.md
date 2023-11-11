@@ -32,37 +32,37 @@ foremost -v <filename>
 
 ## Images
 
-[tineye — Reverse search](https://tineye.com/)
+[TinEye](https://tineye.com/) — Reverse Image Search
 
-[imagemagick — do image manipulation](https://imagemagick.org/)
+[ImageMagick](https://imagemagick.org/) — do image manipulation
 
-[Stegsolve.jar — unhide flag from an image](https://yandex.kz/search/?text=Stegsolve.jar)
+[Stegsolve.jar](https://yandex.kz/search/?text=Stegsolve.jar) — unhide flag from an image
 
-[SmartDeblur — fix blurry on image](https://github.com/Y-Vladimir/SmartDeblur)
+[SmartDeblur](https://github.com/Y-Vladimir/SmartDeblur) — fix blurry on image
 
-[tesseract — scan text in image and convert it to .txt file](https://tesseract-ocr.github.io/)
+[Tesseract](https://tesseract-ocr.github.io/) — scan text in image and convert it to .txt file
 
 <br>
 
-[steghide — File carve](https://www.kali.org/tools/steghide/ "https://www.kali.org/tools/steghide/")
+[steghide](https://www.kali.org/tools/steghide/) — File carve
 
 ```shell
 steghide --extract -sf <filename>
 ```
 
-[pngcheck — Check for any corruption on PNG](https://manpages.ubuntu.com/manpages/focal/man1/pngcheck.1.html "https://manpages.ubuntu.com/manpages/focal/man1/pngcheck.1.html")
+[pngcheck](https://manpages.ubuntu.com/manpages/focal/man1/pngcheck.1.html) — Check for any corruption on PNG
 
 ```shell
 pngcheck <filename>
 ```
 
-[zsteg — Detect stegano-hidden data in PNG & BMP](https://github.com/zed-0xff/zsteg "https://github.com/zed-0xff/zsteg")
+[zsteg](https://github.com/zed-0xff/zsteg) — Detect stegano-hidden data in PNG & BMP
 
 ```shell
 zsteg -a <filename>
 ```
 
-[stegcracker — brute-force password utility to uncover hidden data inside files](https://www.kali.org/tools/stegcracker/ "https://www.kali.org/tools/stegcracker/")
+[stegcracker](https://www.kali.org/tools/stegcracker/) — brute-force password utility to uncover hidden data inside files
 
 ```shell
 stegcracker <filename> <wordlist>
@@ -84,25 +84,25 @@ stegcracker <filename> <wordlist>
 
 ## Compressed file
 
-[zipdetails — display details about the internal structure of a Zip file](https://manpages.ubuntu.com/manpages/trusty/man1/zipdetails.1.html)
+[zipdetails](https://manpages.ubuntu.com/manpages/trusty/man1/zipdetails.1.html) — display details about the internal structure of a Zip file
 
 ```shell
 zipdetails -v <filename>
 ```
 
-[zipinfo — show details info about Zip file](https://manpages.ubuntu.com/manpages/lunar/man1/zipinfo.1.html)
+[zipinfo](https://manpages.ubuntu.com/manpages/lunar/man1/zipinfo.1.html) — show details info about Zip file
 
 ```shell
 zipinfo <filename>
 ```
 
-[zip — attempt to repair a corrupted Zip file](https://manpages.ubuntu.com/manpages/focal/man1/zip.1.html)
+[zip](https://manpages.ubuntu.com/manpages/focal/man1/zip.1.html) — attempt to repair a corrupted Zip file
 
 ```shell
 zip -FF <filename> --out <outputfile>
 ```
 
-[fcrackzip — Brute-force the zip password](https://www.kali.org/tools/fcrackzip/)
+[fcrackzip](https://www.kali.org/tools/fcrackzip/) — Brute-force the zip password
 
 ```shell
 fcrackzip -D -u -p <wordlist>  <filename>
@@ -122,7 +122,7 @@ To crack 7z:
 
 [Audacity](https://ru.wikipedia.org/wiki/Audacity)
 
-[Sonic Visualizer — Look at spectogram and other few Pane](https://en.wikipedia.org/wiki/Sonic_Visualiser)
+[Sonic Visualizer](https://en.wikipedia.org/wiki/Sonic_Visualiser) — Look at spectogram and other few Pane
 
 [Deepsound](https://medium.com/@ibnshehu/deepsound-audio-steganography-tool-f7ca0a897576)
 

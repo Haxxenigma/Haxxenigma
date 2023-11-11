@@ -48,29 +48,54 @@ echo '<base64 string>' | base64 -d
 
 ## OpenSSL
 
-Decrypt a file using RSA private key
-
 ```shell
-openssl rsautl -decrypt -inkey pub_priv.key -in ciphertext.file -out decrypted.file
+openssl help
 ```
 
-Decrypt a file using AES-256-CBC and a keyfile
-
 ```shell
-openssl enc -d -aes-256-cbc -in ciphertext.file -out cleartext.file -pass file:./key.file
+openssl <command> -help
 ```
 
-Decrypt a file using AES-256-CBC
+### openssl enc
+`-list`, `-ciphers`: List ciphers
 
-```shell
-openssl enc -aes-256-cbc -d -in file.txt.enc -out file.txt
-```
+`-e`: Encrypt
 
-Decrypt a file using AES-256-CBC with base64 encoded
+`-d`: Decrypt
 
-```shell
-openssl enc -aes-256-cbc -d -a -in file.txt.enc -out file.txt
-```
+`-in <file>`: Input file
+
+`-out <file`: Output file
+
+`-k <val>`: Passphrase
+
+`-kfile <file>`: Read passphrase from file
+
+`-pass <val>`: Passphrase source
+
+`-a`, `-base64`: Base64 encode/decode
+
+`-*`: Any supported cipher
+
+### openssl pkeyutl
+
+`-encrypt`: Encrypt input data with public key
+
+`-decrypt`: Decrypt input data with private key
+
+`-in <file>`: Input file
+
+`-out <file`: Output file
+
+`-rawin`: Indicate the input data is in raw form
+
+`-pubin`: Input is a public key
+
+`-inkey <val>`: Input private key file
+
+`-passin <val>`: Input file pass phrase source
+
+`-peerkey <val>`: Peer key file used in key derivation
 
 Others reference: <https://gist.github.com/dreikanter/c7e85598664901afae03fedff308736b#file-encrypt_openssl-md>
 
@@ -128,6 +153,22 @@ ssh -i <id_rsa> user@host
 
 ```
 -i identity_file        Selects a file from which the identity (private key) for public key authentication is read.  You can also specify a public key file to use the corresponding private key that is loaded in ssh‐agent(1) when  the  private  key  file  is not present locally.  The default is ~/.ssh/id_rsa, ~/.ssh/id_...
+```
+
+### [zip2john](https://www.kali.org/tools/john/#zip2john)
+
+> create password hash from zip file
+
+```shell
+zip2john file.zip > hash.txt
+```
+
+```shell
+john --format=zip --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+```
+
+```shell
+john --show hash.txt
 ```
 
 ## [Hydra](https://www.kali.org/tools/hydra/)
