@@ -149,7 +149,7 @@ npx create-next-app@latest
 npm run dev
 ```
 
-### app/app/page.js:
+### /app/page.js:
 
 ```js
 export default function Page() {
@@ -157,7 +157,7 @@ export default function Page() {
 }
 ```
 
-### app/app/dashboard/page.js:
+### /app/dashboard/page.js:
 
 ```js
 export default function Page() {
@@ -165,7 +165,7 @@ export default function Page() {
 }
 ```
 
-### app/app/layout.js:
+### /app/layout.js:
 
 ```js
 import { Inter } from 'next/font/google'
@@ -241,7 +241,7 @@ bind-address = 0.0.0.0
 systemctl restart mysql
 ```
 
-# MySQL x Next.js
+# Next.js x MySQL
 
 ### mysql2:
 
@@ -258,7 +258,7 @@ PASS=<password>
 DB=<db>
 ```
 
-### app/db.js:
+### /db.js:
 
 ```js
 const mysql = require('mysql2/promise');
@@ -288,7 +288,7 @@ module.exports = async function execQuery(query, values) {
 }
 ```
 
-### app/app/page.js:
+### /app/page.js:
 
 ```js
 import Link from 'next/link';
@@ -311,4 +311,170 @@ export default async function Home() {
         </>
     );
 }
+```
+
+# Next.js x Prisma
+
+```shell
+npm install prisma
+```
+
+```shell
+npx prisma init
+```
+
+### /prisma/schema.prisma:
+
+```
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+```
+
+### /.env:
+
+```
+DATABASE_URL='mysql://USER:PASSWORD@HOST:PORT/DATABASE'
+```
+
+<br>
+
+### Create Models in the schema.prisma from the database:
+
+```shell
+npx prisma db pull
+```
+
+### Create Tables in the database from the schema.prisma:
+
+```shell
+npx prisma db push
+```
+
+### Create a migration from changes in Prisma schema, apply it to the database, trigger generators:
+
+```shell
+npx prisma migrate dev [--name <name>]
+```
+
+### Reset your database and apply all migrations:
+
+```shell
+npx prisma migrate reset
+```
+
+<br>
+
+### Install Prisma Client:
+
+```shell
+npm install @prisma/client
+```
+
+### Generate Prisma Client:
+
+```shell
+npx prisma generate
+```
+
+###  Importing Prisma Client:
+
+```javascript
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
+```
+
+### Create:
+
+```javascript
+const newRecord = await prisma.model.create({
+    data: {
+        name: 'John',
+        email: 'john@email.com',
+    },
+});
+
+const newRecords = await prisma.model.createMany({
+    data: [
+        { name: 'John', email: 'john@email.com' },
+        { name: 'Eve', email: 'eve@email.com' },
+        { name: 'Alice', email: 'alice@email.com' },
+    ],
+    skipDuplicates: true,
+});
+```
+
+### Read:
+
+```javascript
+const record = await prisma.model.findUnique({
+    where: {
+        email: 'john@email.com',
+    },
+});
+
+const records = await prisma.model.findMany({
+    where: {
+        email: {
+            endsWith: 'prisma.io',
+        },
+    },
+});
+```
+
+### Update:
+
+```javascript
+const updateRecord = await prisma.model.update({
+    where: {
+        email: 'john@email.com',
+    },
+    data: {
+        name: 'John Doe',
+    },
+});
+
+const updateRecords = await prisma.model.updateMany({
+    where: {
+        email: {
+            contains: 'prisma.io',
+        },
+    },
+    data: {
+        role: 'admin',
+    },
+});
+
+const upsertRecord = await prisma.model.upsert({
+    where: {
+        email: 'john@email.com',
+    },
+    update: {
+        name: 'John Doe',
+    },
+    create: {
+        email: 'john@email.com',
+        name: 'John Doe',
+    },
+});
+```
+
+### Delete:
+
+```javascript
+const deleteRecord = await prisma.model.delete({
+    where: {
+        email: 'john@email.com',
+    },
+});
+
+const deleteRecords = await prisma.model.deleteMany({
+    where: {
+        email: {
+            contains: 'prisma.io',
+        },
+    },
+});
 ```
