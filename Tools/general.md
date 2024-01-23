@@ -9,3 +9,5 @@
 [intelx — Like leakcheck](https://intelx.io/)
 
 [wigle.net — Wireless Network Mapping](https://wigle.net)
+
+[Linux Shells using built in tools🔥](https://www.lanmaster53.com/2011/05/7-linux-shells-using-built-in-tools/)
